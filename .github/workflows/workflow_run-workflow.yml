@@ -15,5 +15,5 @@ jobs:
       GITHUB_CONTEXT: ${{ toJSON(github) }}
     steps:
       - run: |
-        env
-        echo "$GITHUB_CONTEXT"
+          env
+          echo "$GITHUB_CONTEXT"
