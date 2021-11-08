@@ -1,0 +1,19 @@
+name: Follow up
+
+on:
+  workflow_run:
+    workflows:
+      - First Workflow
+    types:
+      - completed
+
+jobs:
+  follow-up-job:
+    name: The follow up job
+    runs-on: ubuntu-latest
+    env: 
+      GITHUB_CONTEXT: ${{ toJSON(github) }}
+    steps:
+      - run: |
+        env
+        echo "$GITHUB_CONTEXT"
